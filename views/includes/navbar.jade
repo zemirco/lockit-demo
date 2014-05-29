@@ -1,0 +1,22 @@
+
+div.navbar.navbar-default.navbar-fixed-top
+  div.container
+    div.navbar-header
+      button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="/") Lockit Demo
+    div.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        if name
+          li.dropdown
+            a.dropdown-toggle(href="#", data-toggle="dropdown") #{name} #{' '}
+              b.caret
+            ul.dropdown-menu
+              li: a(href="/settings") Settings
+              li.divider
+              li: a(href="/logout") Logout
+        else
+          li: a(href="/signup") Signup
+          li: a(href="/login") Login

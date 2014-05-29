@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  div.full-height.lime
+    div.container
+      h1 Two-Factor Authentication
+      if !enabled
+        ol
+          li Download #{''}
+            a(href="https://support.google.com/accounts/answer/1066447?hl=en") Google Authenticator
+          li Open Google Authenticator app on your phone
+          li Tap the pen icon in the top right corner
+          li Tap the plus icon
+          li Tap #{''}
+            strong Scan Barcode #{''}
+            | and then point your camera at the QR code on your computer screen
+          img(src=qr)
+          li.
+            The app will save your account and generate a new authentication code every
+            few seconds.
+          li Enter the token from the Google Authenticator app and click on "Enable"
+        div
+          form.form-inline(method="POST", action="/settings")
+            div.form-group
+              input.form-control(type="text", id="token", name="token", placeholder="token")
+            button.btn.btn-default(type="submit") Enable
+          if error
+            p: strong=error
+      else
+        p Two-Factor Authentication is enabled.
+        form(action="/disable", method="POST")
+          input.btn.btn-primary(type="submit", value="Disable")
+      h1 Delete Account
+      p: a(href="/delete-account") Remove my account forever.

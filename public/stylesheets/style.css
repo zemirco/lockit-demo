@@ -1,0 +1,119 @@
+
+html,
+body {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+pre {
+  border-radius: 0;
+  border: none;
+  margin-top: 50px;
+}
+
+.margin-bottom {
+  margin-bottom: 50px;
+}
+
+h3 {
+  margin-top: 50px;
+  color: #eee;
+}
+
+h4 {
+  color: #eee;
+}
+
+.form-control {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.alert {
+  border-radius: 0;
+}
+
+.panel-heading {
+  display: none;
+}
+
+form label {
+  display: none;
+}
+
+.panel {
+  border: none;
+  box-shadow: none;
+}
+
+.btn {
+  margin-top: 30px;
+}
+
+.form-inline .btn {
+  margin-top: initial;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  min-height: 400px;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+}
+
+.aqua {
+  background: #7FDBFF;
+}
+
+.teal {
+  background: #39CCCC;
+}
+
+.olive {
+  background: #3D9970;
+}
+
+.olive a {
+  color: #eee;
+}
+
+.green {
+  background: #2ECC40;
+}
+
+.lime {
+  background: #01FF70;
+}
+
+.yellow {
+  background: #FFDC00;
+}
+
+.glyphicon {
+  font-size: 40px;
+}
+
+.glyphicon-heart {
+  top: 8px;
+  left: 10px;
+}
+
+.forgot-password,
+.resend-email {
+  margin-top: 15px;
+}
