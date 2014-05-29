@@ -11,7 +11,33 @@ var Lockit = require('lockit');
 var Adapter = require('lockit-mongodb-adapter');
 
 var routes = require('./routes/index');
-var config = require('./config.prod.js');
+var config;
+
+try {
+  config = require('./config.prod.js');
+} catch(e) {
+  console.log('reading environment variables from Heroku ...');
+}
+
+// read config from heroku environment vars
+config = config || {
+  appname: process.env.APPNAME,
+  url: process.env.URL,
+  emailFrom: process.env.EMAIL,
+  emailType: process.env.TYPE,
+  emailSettings: {
+    service: process.env.SERVICE,
+    auth: {
+      user: process.env.USER,
+      pass: process.env.PASS
+    }
+  },
+  db: {
+    url: process.env.DB,
+    name: process.env.NAME,
+    collection: process.env.COLLECTION
+  }
+};
 
 var adapter = new Adapter(config);
 var lockit = new Lockit(config);
